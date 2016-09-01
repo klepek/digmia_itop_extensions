@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+  <classes>
+    <class id="LogicalVolume">
+      <fields>
+        <field id="volume_type" xsi:type="AttributeEnum" _delta="define">
+	  <values>
+	     <value>Data Volume</value>
+	     <value>Snapshot/Clone/Backup volume</value>
+	  </values>
+          <sql>volume_type</sql>
+          <default_value>Data Volume</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="backup_hourly" xsi:type="AttributeInteger" _delta="define">
+          <sql>backup_hourly</sql>
+          <default_value>0</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="backup_daily" xsi:type="AttributeInteger" _delta="define">
+          <sql>backup_daily</sql>
+          <default_value>30</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="backup_weekly" xsi:type="AttributeInteger" _delta="define">
+          <sql>backup_weekly</sql>
+          <default_value>0</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+        <field id="backup_monthly" xsi:type="AttributeInteger" _delta="define">
+          <sql>backup_monthly</sql>
+          <default_value>0</default_value>
+          <is_null_allowed>false</is_null_allowed>
+        </field>
+      </fields>
+      <presentation>
+        <details _delta="redefine">
+          <items>
+            <item id="col:1">
+              <items>
+                <item id="fieldset:LogicalVolume:basic">
+                  <rank>10</rank>
+                  <items>
+                    <item id="name">
+                      <rank>10</rank>
+                    </item>
+                    <item id="lun_id">
+                      <rank>20</rank>
+                    </item>
+                    <item id="description">
+                      <rank>30</rank>
+                    </item>
+                    <item id="storagesystem_id">
+                      <rank>40</rank>
+                    </item>
+                    <item id="raid_level">
+                      <rank>50</rank>
+                    </item>
+                    <item id="size">
+                      <rank>60</rank>
+                    </item>
+                    <item id="servers_list">
+                      <rank>70</rank>
+                    </item>
+                    <item id="virtualdevices_list">
+                      <rank>80</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+            <item id="col:2">
+              <items>
+                <item id="fieldset:LogicalVolume:backup">
+                  <rank>20</rank>
+                  <items>
+                    <item id="volume_type">
+                      <rank>10</rank>
+                    </item>
+                    <item id="backup_hourly">
+                      <rank>20</rank>
+                    </item>
+                    <item id="backup_daily">
+                      <rank>30</rank>
+                    </item>
+                    <item id="backup_weekly">
+                      <rank>40</rank>
+                    </item>
+                    <item id="backup_monthly">
+                      <rank>50</rank>
+                    </item>
+                  </items>
+                </item>
+              </items>
+            </item>
+          </items>
+        </details>
+      </presentation>
+    </class>
+  </classes>
+</itop_design>
